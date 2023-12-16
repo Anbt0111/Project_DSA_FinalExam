@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50969fdd-a5f4-4cef-a14a-ae6aac57d89e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/module/Symbols.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +55,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "E:/Intellij/Project_DSA_FinalExam/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -71,6 +76,9 @@
       <workItem from="1702657016384" duration="386000" />
       <workItem from="1702657475087" duration="1590000" />
       <workItem from="1702692509818" duration="116000" />
+      <workItem from="1702699001587" duration="623000" />
+      <workItem from="1702700836578" duration="672000" />
+      <workItem from="1702721830093" duration="1659000" />
     </task>
     <servers />
   </component>
