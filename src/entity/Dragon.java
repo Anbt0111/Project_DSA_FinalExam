@@ -1,6 +1,7 @@
 package entity;
 
 import module.Symbols;
+import view.View;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -8,14 +9,14 @@ import java.awt.image.BufferedImage;
 import java.util.Stack;
 
 public class Dragon extends Entity {
-    public int X_COORDINATE = 800;
-    public int Y_COORDINATE = 100;
-    public int WIDTH = 800;
-    public int HEIGHT = 700;
+    public int X_COORDINATE = 11 * View.GRID_WIDTH;
+    public int Y_COORDINATE = 4 * View.GRID_HEIGHT;
+    public int WIDTH = 5 * View.GRID_WIDTH;
+    public int HEIGHT = 8 * View.GRID_HEIGHT;
     Stack<Symbols> weakness = new Stack<>(); // stack chứa các symbol
 
-    public Dragon( int health) {
-        super(health); // gọi constructor của lớp cha
+    public Dragon() {
+        super(3); // gọi constructor của lớp cha
         attack = 1; // sát thương = 1
         this.attackSprite = new BufferedImage[MAX_SPRITE_NUM]; // khởi tạo mảng chứa sprite khi tấn công
         this.idleSprite = new BufferedImage[MAX_SPRITE_NUM]; // khởi tạo mảng chứa sprite khi đứng yên

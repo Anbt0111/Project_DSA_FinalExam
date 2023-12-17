@@ -311,10 +311,9 @@ public class GamePanel extends JPanel implements Runnable {
     gojo.castSpell(symbolName);
   }
 
-  /**
-   * reset the game (when user start the game after pressing the back button)
-   */
+  /** reset the game (when user start the game after pressing the back button) */
   public void reset() {
+    score = 0;
     isStartOfTheGame = true;
     thread = new Thread(this);
     gojo = new Gojo();
@@ -330,9 +329,7 @@ public class GamePanel extends JPanel implements Runnable {
     thread.start();
   }
 
-  /**
-   * exit game, stop the game thread
-   */
+  /** exit game, stop the game thread */
   public void stop() {
     thread.interrupt();
   }

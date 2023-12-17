@@ -1,17 +1,19 @@
 package entity;
 
 import module.Symbols;
+import view.View;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Stack;
+import java.util.Vector;
 
 public class Gojo extends Entity {
-    public final int X_COORDINATE = 50;
-    public final int Y_COORDINATE = 110;
-    public final int WIDTH = 500;
-    public final int HEIGHT = 600;
+    public final int X_COORDINATE = View.GRID_WIDTH;
+    public final int Y_COORDINATE = 4 * View.GRID_HEIGHT + 5;// small padding to make him stand on the ground
+    public final int WIDTH = View.GRID_WIDTH * 3;
+    public final int HEIGHT = View.GRID_HEIGHT * 8;
     public BufferedImage heartFullSprite;
     public BufferedImage heartNullSprite;
     public Stack<Symbols> spells = new Stack<>(); // stack chứa các hanh động
@@ -81,7 +83,7 @@ public class Gojo extends Entity {
          * vẽ các trái tim thể hiện máu
          */
         int i = 1;
-        while (i < health) {
+        while (i <= health) {
             g2d.drawImage(heartFullSprite, 150 * i - 150, 0, null);
             i++;
         }
