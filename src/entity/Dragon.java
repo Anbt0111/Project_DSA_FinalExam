@@ -42,6 +42,7 @@ public class Dragon extends Entity {
             e.printStackTrace();
         }
     }
+
     /**
      * dựa vào trạng thái của rồng để vẽ sprite tương ứng
      */
@@ -86,4 +87,33 @@ public class Dragon extends Entity {
         g2d.drawImage(currentSprite, X_COORDINATE, Y_COORDINATE, null); // vẽ sprite hiện tại
     }
 
+    public void setState(int state) { // set trạng thái của rồng
+        this.state = state;
+    }
+
+    public void revealWeakness() { // hiện các symbol
+        weakness.clear(); // xóa các symbol cũ
+        for (int i = 0; i < 5; i++)
+            weakness.push(new Symbols((int) (Math.random() * 6) + 1));
+    }
+
+    /**
+     * tấn công Gojo, set trạng thái của rồng là tấn công
+     *
+     * @param gojo
+     */
+    public void attack(Gojo gojo) {
+        this.setState(ATTACK); // set trạng thái là tấn công
+        gojo.takeDamage(); // gọi hàm takeDamage() của Gojo
+    }
+
+    /**
+     * nhận sát thương
+     *
+     * @param damage
+     */
+    public void takeDamage(int damage) {
+        health -= damage; // giảm máu
+        this.setState(HURT); // set trạng thái là bị đánh
+    }
 }
