@@ -14,7 +14,7 @@ public class Dragon extends Entity {
     public int HEIGHT = 700;
     Stack<Symbols> weakness = new Stack<>(); // stack chứa các symbol
 
-    public Dragon(int health) {
+    public Dragon( int health) {
         super(health); // gọi constructor của lớp cha
         attack = 1; // sát thương = 1
         this.attackSprite = new BufferedImage[MAX_SPRITE_NUM]; // khởi tạo mảng chứa sprite khi tấn công
@@ -87,6 +87,10 @@ public class Dragon extends Entity {
         g2d.drawImage(currentSprite, X_COORDINATE, Y_COORDINATE, null); // vẽ sprite hiện tại
     }
 
+    public Stack<Symbols> getWeakness() {
+        return weakness;
+    }
+
     public void setState(int state) { // set trạng thái của rồng
         this.state = state;
     }
@@ -116,4 +120,6 @@ public class Dragon extends Entity {
         health -= damage; // giảm máu
         this.setState(HURT); // set trạng thái là bị đánh
     }
+
+
 }

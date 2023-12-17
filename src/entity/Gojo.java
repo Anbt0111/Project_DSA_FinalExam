@@ -16,7 +16,7 @@ public class Gojo extends Entity {
     public BufferedImage heartNullSprite;
     public Stack<Symbols> spells = new Stack<>(); // stack chứa các hanh động
 
-    public Gojo(int health) {
+    public Gojo() {
         super(3);
         this.attack = 50;
         this.idleSprite = new BufferedImage[MAX_SPRITE_NUM];

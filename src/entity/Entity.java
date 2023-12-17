@@ -9,7 +9,7 @@ public class Entity {
     public int spriteNum; // số sprite
     public int spriteTime = 1; // thời gian hiển thị sprite
     public int state = 0;   // 0 - đứng yên, 1 - tấn công , 2 - bị đánh
-    public final int IDLE = 0; // trạng thái đứng yên
+    public static final int IDLE = 0; // trạng thái đứng yên
     public final int ATTACK = 1; // trạng thái tấn công
     public final int HURT = 2; // trạng thái bị đánh
     public final int SPRITE_INTERVAL = 3; // thời gian chuyển đổi giữa các sprite
