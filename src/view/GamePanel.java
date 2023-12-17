@@ -19,15 +19,15 @@ public class GamePanel extends JPanel implements Runnable {
   private Image backgroundImage;
   private Countdown timer = new Countdown();
   public JLabel clockLabel =
-      new JLabel() {
-        @Override
-        public void paintComponent(Graphics g) {
-          super.paintComponent(g);
-          Graphics2D g2 = (Graphics2D) g;
-          g2.setFont(view.gameFont.deriveFont(Font.BOLD, 80));
-          g2.drawString(timer.getTime() + "", View.GRID_WIDTH / 3, View.GRID_HEIGHT * 3 / 2);
-        }
-      };
+          new JLabel() {
+            @Override
+            public void paintComponent(Graphics g) {
+              super.paintComponent(g);
+              Graphics2D g2 = (Graphics2D) g;
+              g2.setFont(view.gameFont.deriveFont(Font.BOLD, 80));
+              g2.drawString(timer.getTime() + "", View.GRID_WIDTH / 3, View.GRID_HEIGHT * 3 / 2);
+            }
+          };
   private InGameSpriteManager spriteManager = new InGameSpriteManager();
   private boolean isMemorizePhase = true;
   private boolean isCastingPhase = false;
@@ -43,16 +43,16 @@ public class GamePanel extends JPanel implements Runnable {
     addSymbolTable();
 
     this.backgroundImage =
-        new ImageIcon(getClass().getClassLoader().getResource("resource/images/background.png"))
-            .getImage();
+            new ImageIcon(getClass().getClassLoader().getResource("resource/images/background.png"))
+                    .getImage();
 
     ImageIcon clock =
-        new ImageIcon(getClass().getClassLoader().getResource("resource/images/clock.png"));
+            new ImageIcon(getClass().getClassLoader().getResource("resource/images/clock.png"));
     clock =
-        new ImageIcon(
-            clock
-                .getImage()
-                .getScaledInstance(View.GRID_WIDTH, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
+            new ImageIcon(
+                    clock
+                            .getImage()
+                            .getScaledInstance(View.GRID_WIDTH, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
     clockLabel.setIcon(clock);
     clockLabel.setBounds(0, View.GRID_HEIGHT * 13, View.GRID_WIDTH, View.GRID_HEIGHT * 2);
     this.add(clockLabel);
@@ -61,15 +61,15 @@ public class GamePanel extends JPanel implements Runnable {
     exitButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     exitButton.setName("back");
     ImageIcon exitIcon =
-        new ImageIcon(getClass().getClassLoader().getResource("resource/images/exit_button.png"));
+            new ImageIcon(getClass().getClassLoader().getResource("resource/images/exit_button.png"));
     exitIcon =
-        new ImageIcon(
-            exitIcon
-                .getImage()
-                .getScaledInstance(View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
+            new ImageIcon(
+                    exitIcon
+                            .getImage()
+                            .getScaledInstance(View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
     exitButton.setIcon(exitIcon);
     exitButton.setBounds(
-        14 * View.GRID_WIDTH, 13 * View.GRID_HEIGHT, View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2);
+            14 * View.GRID_WIDTH, 13 * View.GRID_HEIGHT, View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2);
     exitButton.addMouseListener(view.mouseController);
     this.add(exitButton);
 
@@ -80,21 +80,21 @@ public class GamePanel extends JPanel implements Runnable {
 
     // Load the transparent image
     ImageIcon removeIcon =
-        new ImageIcon(getClass().getClassLoader().getResource("resource/images/remove_button.png"));
+            new ImageIcon(getClass().getClassLoader().getResource("resource/images/remove_button.png"));
 
     // Ensure the image has a transparent background
     removeIcon =
-        new ImageIcon(
-            removeIcon
-                .getImage()
-                .getScaledInstance(View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
+            new ImageIcon(
+                    removeIcon
+                            .getImage()
+                            .getScaledInstance(View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2, Image.SCALE_SMOOTH));
     // Set the button to be transparent
     removeButton.setContentAreaFilled(false);
     removeButton.setBorderPainted(false);
 
     removeButton.setIcon(removeIcon);
     removeButton.setBounds(
-        14 * View.GRID_WIDTH, 11 * View.GRID_HEIGHT, View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2);
+            14 * View.GRID_WIDTH, 11 * View.GRID_HEIGHT, View.GRID_WIDTH * 2, View.GRID_HEIGHT * 2);
     removeButton.addMouseListener(view.mouseController);
     this.add(removeButton);
 
@@ -123,7 +123,7 @@ public class GamePanel extends JPanel implements Runnable {
     spriteManager.setTableSpriteSize(8 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
     inputTable.setIcon(spriteManager.getTableSprite());
     inputPanel.setBounds(
-        4 * View.GRID_WIDTH, 13 * View.GRID_HEIGHT, 8 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
+            4 * View.GRID_WIDTH, 13 * View.GRID_HEIGHT, 8 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
     inputPanel.add(inputTable);
 
     spriteManager.setSymbolSpriteSize(View.GRID_WIDTH, View.GRID_HEIGHT);
@@ -134,10 +134,10 @@ public class GamePanel extends JPanel implements Runnable {
       symbol.setName("symbol" + i);
       symbol.setIcon(spriteManager.getSymbolSprite(i));
       symbol.setBounds(
-          View.GRID_WIDTH / 2 + (View.GRID_WIDTH * (i - 1) + View.GRID_WIDTH / 5 * (i - 1)),
-          View.GRID_HEIGHT / 2,
-          View.GRID_WIDTH,
-          View.GRID_HEIGHT);
+              View.GRID_WIDTH / 2 + (View.GRID_WIDTH * (i - 1) + View.GRID_WIDTH / 5 * (i - 1)),
+              View.GRID_HEIGHT / 2,
+              View.GRID_WIDTH,
+              View.GRID_HEIGHT);
       inputTable.add(symbol);
     }
     this.add(inputPanel);
@@ -146,10 +146,10 @@ public class GamePanel extends JPanel implements Runnable {
     symbolTable.setLayout(null);
 
     symbolPanel.setBackground(
-        new Color(
-            0, 0, 0, 0)); // for some reason, setOpaque(false) doesn't work, so i use this instead
+            new Color(
+                    0, 0, 0, 0)); // for some reason, setOpaque(false) doesn't work, so i use this instead
     symbolPanel.setBounds(
-        4 * View.GRID_WIDTH, 6 * View.GRID_HEIGHT, 7 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
+            4 * View.GRID_WIDTH, 6 * View.GRID_HEIGHT, 7 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
     spriteManager.setTableSpriteSize(7 * View.GRID_WIDTH, 2 * View.GRID_HEIGHT);
     symbolTable.setIcon(spriteManager.getTableSprite());
     symbolPanel.add(symbolTable);
@@ -201,10 +201,10 @@ public class GamePanel extends JPanel implements Runnable {
       JLabel symbol = new JLabel();
       symbol.setIcon(spriteManager.getSymbolSprite(dragon.getWeakness().get(i).getIndex()));
       symbol.setBounds(
-          View.GRID_WIDTH / 2 + (View.GRID_WIDTH * i + View.GRID_WIDTH / 5 * i),
-          View.GRID_HEIGHT / 2,
-          View.GRID_WIDTH,
-          View.GRID_HEIGHT);
+              View.GRID_WIDTH / 2 + (View.GRID_WIDTH * i + View.GRID_WIDTH / 5 * i),
+              View.GRID_HEIGHT / 2,
+              View.GRID_WIDTH,
+              View.GRID_HEIGHT);
       symbolTable.add(symbol);
     }
     // starts memorize phase countdown
@@ -213,7 +213,7 @@ public class GamePanel extends JPanel implements Runnable {
 
   private void castingPhase() {
     if (!timer.isCounting()
-        || gojo.getSpells().size() == 5) { // if time's up or player has done inputting
+            || gojo.getSpells().size() == 5) { // if time's up or player has done inputting
       // transit to attack phase, stop counting if there are time remaining (the moon is not red)
       isCastingPhase = false;
       timer.stopCounting();
@@ -300,18 +300,20 @@ public class GamePanel extends JPanel implements Runnable {
     JLabel symbol = new JLabel();
     symbol.setIcon(spriteManager.getSymbolSprite(Integer.parseInt(symbolName.substring(6))));
     symbol.setBounds(
-        View.GRID_WIDTH / 2
-            + (View.GRID_WIDTH * gojo.getSpells().size()
-                + View.GRID_WIDTH / 5 * gojo.getSpells().size()),
-        View.GRID_HEIGHT / 2,
-        View.GRID_WIDTH,
-        View.GRID_HEIGHT);
+            View.GRID_WIDTH / 2
+                    + (View.GRID_WIDTH * gojo.getSpells().size()
+                    + View.GRID_WIDTH / 5 * gojo.getSpells().size()),
+            View.GRID_HEIGHT / 2,
+            View.GRID_WIDTH,
+            View.GRID_HEIGHT);
     symbolTable.add(symbol);
 
     gojo.castSpell(symbolName);
   }
 
-  /** reset the game (when user start the game after pressing the back button) */
+  /**
+   * reset the game (when user start the game after pressing the back button)
+   */
   public void reset() {
     isStartOfTheGame = true;
     thread = new Thread(this);
@@ -328,7 +330,9 @@ public class GamePanel extends JPanel implements Runnable {
     thread.start();
   }
 
-  /** exit game, stop the game thread */
+  /**
+   * exit game, stop the game thread
+   */
   public void stop() {
     thread.interrupt();
   }

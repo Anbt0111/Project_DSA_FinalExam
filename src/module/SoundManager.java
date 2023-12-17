@@ -96,4 +96,3 @@ public class SoundManager {
     gojoWin.start();
   }
 }
-}
