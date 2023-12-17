@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.List;
 import javax.swing.*;
 import module.ScoreManager;
-import sound.SoundManager;
+import sound.SoundManager
 
 public class View extends JFrame {
 

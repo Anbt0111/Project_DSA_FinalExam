@@ -14,16 +14,22 @@ public class Entity {
     public final int HURT = 2; // trạng thái bị đánh
     public final int SPRITE_INTERVAL = 3; // thời gian chuyển đổi giữa các sprite
     public final int MAX_SPRITE_NUM = 3; // số sprite tối đa = 3
-    public BufferedImage[] ideSprites; //mảng chứa sprite khi đứng yên
-    public BufferedImage[] attackSprites; // mảng chứa sprite khi tấn công
-    public BufferedImage[] hurtSprites; // mảng chứa sprite khi bị đánh
+    public BufferedImage[] idleSprite; //mảng chứa sprite khi đứng yên
+    public BufferedImage[] attackSprite; // mảng chứa sprite khi tấn công
+    public BufferedImage[] hurtSprite; // mảng chứa sprite khi bị đánh
     public BufferedImage currentSprite; // sprite hiện tại
 
     public Entity(int health) {
         this.health = health;
     }
 
-    // thay đổi kích thước của Image
+    /**
+     * thay đổi kích thước của sprite
+     * @param image
+     * @param width
+     * @param height
+     * @return
+     */
     public BufferedImage scaleImage(BufferedImage image, int width, int height) {
         // tạo đối tượng BufferedImage
         BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
