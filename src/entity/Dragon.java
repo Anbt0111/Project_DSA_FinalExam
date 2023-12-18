@@ -6,7 +6,7 @@ import view.View;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Stack;
+import module.Stack;
 
 public class Dragon extends Entity {
     public int X_COORDINATE = 11 * View.GRID_WIDTH;
@@ -95,8 +95,8 @@ public class Dragon extends Entity {
     public void setState(int state) { // set trạng thái của rồng
         this.state = state;
     }
-
-    public void revealWeakness() { // hiện các symbol
+// Compare this snippet from Project_DSA_FinalExam/src/entity/Dragon.java:
+    public void revealWeakness() {
         weakness.clear(); // xóa các symbol cũ
         for (int i = 0; i < 5; i++)
             weakness.push(new Symbols((int) (Math.random() * 6) + 1));

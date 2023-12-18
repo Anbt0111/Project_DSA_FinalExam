@@ -199,7 +199,7 @@ public class GamePanel extends JPanel implements Runnable {
     spriteManager.setSymbolSpriteSize(View.GRID_WIDTH, View.GRID_HEIGHT);
     for (int i = 0; i < 5; i++) {
       JLabel symbol = new JLabel();
-      symbol.setIcon(spriteManager.getSymbolSprite(dragon.getWeakness().get(i).getIndex()));
+      symbol.setIcon(spriteManager.getSymbolSprite(dragon.getWeakness().get(i).getIndex())); // get symbol
       symbol.setBounds(
               View.GRID_WIDTH / 2 + (View.GRID_WIDTH * i + View.GRID_WIDTH / 5 * i),
               View.GRID_HEIGHT / 2,

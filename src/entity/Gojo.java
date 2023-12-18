@@ -6,7 +6,7 @@ import view.View;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Stack;
+import module.Stack;
 import java.util.Vector;
 
 public class Gojo extends Entity {
