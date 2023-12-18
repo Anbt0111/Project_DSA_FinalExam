@@ -338,6 +338,7 @@ public class GamePanel extends JPanel implements Runnable {
         isCastingPhase = false;
         symbolPanel.setVisible(false);
         inputPanel.setVisible(false);
+        turn = 1;
     }
 
     public void start() {
@@ -349,6 +350,7 @@ public class GamePanel extends JPanel implements Runnable {
      */
     public void stop() {
         thread.interrupt();
+        timer.stopCounting();
     }
 
     @Override

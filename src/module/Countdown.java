@@ -1,7 +1,7 @@
 package module;
 
 public class Countdown implements Runnable {
-  public static final int MIN_MEMORIZE_TIME = 2;
+  public static final int MIN_MEMORIZE_TIME = 3;
   public static final int MIN_INPUT_TIME = 5;
   public static final int RESULT_TIME = 1;
   private int time;
