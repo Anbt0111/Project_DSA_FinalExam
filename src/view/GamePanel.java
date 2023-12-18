@@ -35,6 +35,7 @@ public class GamePanel extends JPanel implements Runnable {
   private JPanel inputPanel = new JPanel();
   private JLabel scoreLabel = new JLabel();
   private Thread thread = new Thread(this);
+  private int turn = 1;
 
   public GamePanel(View view) {
     this.view = view;
@@ -182,6 +183,8 @@ public class GamePanel extends JPanel implements Runnable {
         stop();
       }
 
+      // to next turn
+      turn++;
       memorizePhaseSetup();
     }
   }
@@ -208,7 +211,7 @@ public class GamePanel extends JPanel implements Runnable {
       symbolTable.add(symbol);
     }
     // starts memorize phase countdown
-    timer.countdown(Countdown.MEMORIZE_TIME);
+    timer.countdown(Countdown.MIN_MEMORIZE_TIME + 8 / turn);
   }
 
   private void castingPhase() {

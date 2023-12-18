@@ -11,15 +11,6 @@ public class Symbols {
         return index;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
-    public String getImagePath() { // lấy đường dẫn ảnh
-        String s = "resources/images/symbols/" + index + ".png";
-        return s;
-    }
-
     @Override
     public boolean equals(Object obj) {
         Symbols symbol = (Symbols) obj;
