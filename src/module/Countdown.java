@@ -23,10 +23,8 @@ public class Countdown implements Runnable {
     }
 
     public void stopCounting() {
-        if (thread != null) {
-            time = -1;
-            thread.interrupt();
-        }
+        time = 0;
+        if(thread != null) thread.interrupt();
     }
 
     @Override
@@ -35,10 +33,9 @@ public class Countdown implements Runnable {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                return; // thread is interrupted, stop counting, stop thread
+                return;
             }
             time--;
         }
-        time--;
     }
 }
