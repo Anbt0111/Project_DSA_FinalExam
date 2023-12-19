@@ -220,7 +220,7 @@ public class GamePanel extends JPanel implements Runnable {
             symbolTable.add(symbol);
         }
         // starts memorize phase countdown
-        timer.countdown(Countdown.MIN_MEMORIZE_TIME + 7 / turn);
+        timer.countdown(Countdown.MIN_MEMORIZE_TIME + 6 / turn);
     }
 
     private void castingPhase() {
