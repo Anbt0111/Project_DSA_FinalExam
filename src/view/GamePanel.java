@@ -333,16 +333,23 @@ public class GamePanel extends JPanel implements Runnable {
         thread = new Thread(this);
         gojo = new Gojo();
         dragon = new Dragon();
-        timer = new Countdown();
+//        timer = new Countdown();
         isMemorizePhase = true;
         isCastingPhase = false;
         symbolPanel.setVisible(false);
         inputPanel.setVisible(false);
         turn = 1;
+        scoreLabel.setText("Score: " + score);
+        memorizePhaseSetup();
     }
 
     public void start() {
-        thread.start();
+        try {
+            thread.start();
+        } catch (IllegalThreadStateException e) {
+            thread = new Thread(this);
+            thread.start();
+        }
     }
 
     /**
@@ -351,6 +358,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void stop() {
         thread.interrupt();
         timer.stopCounting();
+        Thread.currentThread().interrupt();
     }
 
     @Override

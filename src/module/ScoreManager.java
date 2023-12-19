@@ -13,15 +13,14 @@ public class ScoreManager {
   private final List<Integer> scores;
   private final File highScoreFile;
   private Scanner in;
-  private BufferedWriter out;
 
-  public ScoreManager() {
+    public ScoreManager() {
     scores = new ArrayList<>(6);
     highScoreFile = new File(HIGH_SCORE_FILE_PATH);
     try {
       if (!highScoreFile.exists()) {
         highScoreFile.createNewFile();
-        out = new BufferedWriter(new FileWriter(HIGH_SCORE_FILE_PATH));
+          BufferedWriter out = new BufferedWriter(new FileWriter(HIGH_SCORE_FILE_PATH));
         for (int i = 0; i < 5; i++) out.write("0 ");
         out.write(easteregg);
         out.close();
@@ -61,7 +60,7 @@ public class ScoreManager {
   private void updateHighScoreFile() {
     // overwrite the file
     try {
-      out = new BufferedWriter(new FileWriter(HIGH_SCORE_FILE_PATH));
+      BufferedWriter out = new BufferedWriter(new FileWriter(HIGH_SCORE_FILE_PATH));
       for (int score : scores) out.write(score + " ");
       out.write(easteregg);
       out.close();
