@@ -291,8 +291,10 @@ public class View extends JFrame {
     }
 
     public void changePanel(String panelName) {
-        if (panelName.equals(GAME_PANEL)) gamePanel.reset();
-
+        if (panelName.equals(GAME_PANEL)) {
+            gamePanel = new GamePanel(this);
+            this.add(gamePanel, GAME_PANEL);
+        }
         cardLayout.show(this.getContentPane(), panelName);
     }
 

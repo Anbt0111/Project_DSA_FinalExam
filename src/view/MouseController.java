@@ -46,6 +46,7 @@ public class MouseController implements MouseListener {
                 view.gamePanel.removeLastSymbol();
                 break;
             default: // case label from end screen
+                view.gamePanel.stop();
                 this.view.changePanel(View.MAIN_MENU);
         }
     }

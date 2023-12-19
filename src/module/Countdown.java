@@ -24,12 +24,14 @@ public class Countdown implements Runnable {
 
     public void stopCounting() {
         time = 0;
-        if(thread != null) thread.interrupt();
+        if (thread != null) {
+            thread.interrupt();
+        }
     }
 
     @Override
     public void run() {
-        while (time > 0) {
+        while (time > 0 && !Thread.currentThread().isInterrupted()) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
