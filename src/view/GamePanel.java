@@ -327,6 +327,7 @@ public class GamePanel extends JPanel implements Runnable {
     /**
      * reset the game (when user start the game after pressing the back button)
      */
+    @Deprecated
     public void reset() {
         score = 0;
         isStartOfTheGame = true;
